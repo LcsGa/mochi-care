@@ -14,7 +14,7 @@ import { UiHeading } from "design-system/heading";
       <UiAvatar>
         <img src="@/assets/mochi.webp" alt="Photo portrait de Mochi" />
       </UiAvatar>
-      <UiHeading>Mochi</UiHeading>
+      <UiHeading level="1">Mochi</UiHeading>
       <p>Carlin, femelle. Voici tout ce qu'il faut savoir pour s'occuper d'elle</p>
       <small>Consignes à jour au 7 novembre 2026.</small>
 

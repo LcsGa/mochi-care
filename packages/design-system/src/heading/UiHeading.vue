@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import { inject } from "vue";
+import { computed, inject } from "vue";
 import { HeadingLevel } from "./HeadingLevel";
 
+const { level } = defineProps<{ level?: number | string }>();
+
 const headingLevel = inject(HeadingLevel, 1);
+
+const computedLevel = computed(() => level ?? headingLevel);
 </script>
 
 <template>
-  <div class="ui-heading" role="heading" :aria-level="headingLevel">
+  <div class="ui-heading" role="heading" :aria-level="computedLevel">
     <slot />
   </div>
 </template>

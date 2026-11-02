@@ -2,7 +2,7 @@
 import { inject, provide, type Component } from "vue";
 import { HeadingLevel } from "./HeadingLevel";
 
-provide(HeadingLevel, inject(HeadingLevel, 0) + 1);
+provide(HeadingLevel, inject(HeadingLevel, 1) + 1);
 
 const { as = "div" } = defineProps<{ as?: keyof HTMLElementTagNameMap | Component }>();
 </script>
