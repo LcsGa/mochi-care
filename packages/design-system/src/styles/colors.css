@@ -1,0 +1,45 @@
+:root {
+  color-scheme: light dark;
+
+  --color-bg: light-dark(hsl(345 66.7% 97.6%), hsl(334.3 13.7% 10%));
+  --color-surface: light-dark(hsl(0 0% 100%), hsl(333.3 12.7% 13.9%));
+  --color-ink: light-dark(hsl(332.7 15.1% 14.3%), hsl(343.6 44% 95.1%));
+  --color-muted: light-dark(hsl(336.7 9.7% 36.5%), hsl(339.1 18.1% 75.1%));
+  --color-line: light-dark(hsl(343.2 39.7% 87.6%), hsl(333.3 13.8% 25.5%));
+
+  --color-pink: light-dark(hsl(339.9 57.3% 45.9%), hsl(339.8 82.1% 75.9%));
+  --color-pink-soft: light-dark(hsl(342.5 75% 93.7%), hsl(321.3 29% 21%));
+  --color-pink-mid: light-dark(hsl(342.9 66.7% 83.5%), hsl(336.4 33.3% 35.9%));
+  --color-on-pink: var(--color-surface);
+
+  --color-danger: light-dark(hsl(4.2 76.5% 40%), hsl(7.2 100% 73.9%));
+  --color-danger-soft: light-dark(hsl(5.2 85.2% 94.7%), hsl(2.9 39.6% 20.8%));
+  --color-ok: light-dark(hsl(146.1 60.5% 29.8%), hsl(146.4 53.2% 63.1%));
+  --color-info: light-dark(hsl(227.5 37.8% 47.3%), hsl(228.5 73.7% 80.6%));
+  --color-info-soft: light-dark(hsl(228.7 66.7% 95.3%), hsl(229.3 26.9% 20.4%));
+
+  --color-photo-ground: hsl(0 0% 100%);
+  --color-focus: var(--color-pink);
+}
+
+@media print {
+  :root {
+    color-scheme: light;
+
+    --color-bg: hsl(0 0% 100%);
+    --color-surface: hsl(0 0% 100%);
+    --color-ink: hsl(0 0% 0%);
+    --color-muted: hsl(0 0% 20%);
+    --color-line: hsl(0 0% 53.3%);
+
+    --color-pink: hsl(0 0% 0%);
+    --color-pink-soft: hsl(0 0% 94.5%);
+    --color-pink-mid: hsl(0 0% 53.3%);
+
+    --color-danger: hsl(0 0% 0%);
+    --color-danger-soft: hsl(0 0% 100%);
+    --color-ok: hsl(0 0% 0%);
+    --color-info: hsl(0 0% 0%);
+    --color-info-soft: hsl(0 0% 94.5%);
+  }
+}

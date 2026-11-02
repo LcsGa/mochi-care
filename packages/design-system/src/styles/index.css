@@ -1,0 +1,31 @@
+@import "./colors.css";
+@import "./fonts.css";
+@import "./sizes.css";
+@import "./radiuses.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-wrap: pretty;
+}
+
+body {
+  padding: --size(4);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-pink);
+  background: var(--color-bg);
+  font: var(--font-body);
+  color: var(--color-ink);
+}
+
+.bold,
+strong {
+  font: var(--font-body-strong);
+}
+
+.small,
+small {
+  font: var(--font-small);
+  color: var(--color-muted);
+}

@@ -1,0 +1,21 @@
+@import "@fontsource/atkinson-hyperlegible/400.css";
+@import "@fontsource/atkinson-hyperlegible/700.css";
+
+:root {
+  --font-family-sans: "Atkinson Hyperlegible", Verdana, "Segoe UI", system-ui, sans-serif;
+
+  --font-display: 700 2.6rem/1.2 var(--font-family-sans);
+  --font-heading-1: 700 1.6rem/1.2 var(--font-family-sans);
+  --font-heading-2: 700 1.45rem/1.2 var(--font-family-sans);
+  --font-heading-3: 700 1.35rem/1.2 var(--font-family-sans);
+  --font-heading-4: 700 1.2rem/1.2 var(--font-family-sans);
+  --font-heading-5: 700 1.1rem/1.2 var(--font-family-sans);
+
+  --font-body: 400 1.125rem/1.55 var(--font-family-sans);
+  --font-body-strong: 700 1.125rem/1.55 var(--font-family-sans);
+  --font-body-compact: 400 1.08rem/1.35 var(--font-family-sans);
+  --font-small: 400 1rem/1.5 var(--font-family-sans);
+  --font-figure: 700 1.35rem/1.2 var(--font-family-sans);
+  --font-label: 700 0.85rem/1.3 var(--font-family-sans);
+  --font-label-letter-spacing: 0.07em;
+}
