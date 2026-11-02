@@ -93,8 +93,8 @@ import { UiHeading } from "design-system/heading";
   }
 
   > .metadata {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: --size(3);
 
     > * {
