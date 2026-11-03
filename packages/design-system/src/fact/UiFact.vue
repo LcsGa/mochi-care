@@ -35,7 +35,6 @@ const { icon, label, value, meta } = defineProps<{
     color: var(--color-pink);
     inline-size: --size(7);
     block-size: --size(7);
-    stroke-width: 2.2;
   }
 
   > dl {

@@ -6,6 +6,7 @@ import { UiCard } from "design-system/card";
 import { UiDivider } from "design-system/divider";
 import { UiFact } from "design-system/fact";
 import { UiHeading } from "design-system/heading";
+import IdCardCheckList from "./IdCardCheckList.vue";
 </script>
 
 <template>
@@ -14,6 +15,7 @@ import { UiHeading } from "design-system/heading";
       <UiAvatar>
         <img src="@/assets/mochi.webp" alt="Photo portrait de Mochi" />
       </UiAvatar>
+
       <UiHeading level="1">Mochi</UiHeading>
       <p>Carlin, femelle. Voici tout ce qu'il faut savoir pour s'occuper d'elle</p>
       <small>Consignes à jour au 7 novembre 2026.</small>
@@ -28,15 +30,19 @@ import { UiHeading } from "design-system/heading";
 
     <div class="metadata" role="group">
       <UiFact :icon="LucideWeight" label="Poids" value="7,5 kg" />
-
       <UiFact :icon="LucideCake" label="Âge" value="4 ans" meta="née le 27 juin 2022" />
     </div>
+
+    <IdCardCheckList />
   </UiCard>
 </template>
 
 <style scoped>
 .id-card {
   container-type: inline-size;
+
+  --data-cols: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  --data-cols-gap: --size(3);
 
   > .header {
     display: grid;
@@ -56,6 +62,19 @@ import { UiHeading } from "design-system/heading";
 
       > .ui-button {
         margin-block-start: --size(4);
+      }
+    }
+
+    @container (inline-size <= 640px) {
+      grid-template:
+        "avatar"
+        "heading"
+        "description"
+        "meta"
+        "action" / 1fr;
+
+      > .ui-avatar {
+        margin-block-end: --size(4);
       }
     }
 
@@ -94,11 +113,11 @@ import { UiHeading } from "design-system/heading";
 
   > .metadata {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-    gap: --size(3);
+    grid-template-columns: var(--data-cols);
+    gap: var(--data-cols-gap);
 
-    > * {
-      flex: 1;
+    + * {
+      margin-block-start: --size(5);
     }
   }
 }

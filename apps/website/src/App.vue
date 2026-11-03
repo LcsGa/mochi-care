@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import AppIdCard from "@/features/id-card/AppIdCard.vue";
+import IdCard from "@/features/id-card/IdCard.vue";
 </script>
 
 <template>
-  <AppIdCard />
+  <IdCard />
 </template>

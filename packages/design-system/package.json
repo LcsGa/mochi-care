@@ -19,14 +19,16 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.mjs",
-    "./styles.css": "./src/styles/index.css",
     "./package.json": "./package.json",
+    "./styles.css": "./src/styles/index.css",
     "./avatar": "./src/avatar/index.ts",
+    "./badge": "./src/badge/index.ts",
     "./button": "./src/button/index.ts",
     "./card": "./src/card/index.ts",
     "./divider": "./src/divider/index.ts",
     "./fact": "./src/fact/index.ts",
-    "./heading": "./src/heading/index.ts"
+    "./heading": "./src/heading/index.ts",
+    "./tile": "./src/tile/index.ts"
   },
   "publishConfig": {
     "access": "public"

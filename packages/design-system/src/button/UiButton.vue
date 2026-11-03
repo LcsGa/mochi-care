@@ -23,7 +23,6 @@ const { as = "button" } = defineProps<{ as: "button" | "a" }>();
   > :slotted(.lucide) {
     inline-size: --size(5.5);
     block-size: --size(5.5);
-    stroke-width: 2.2;
   }
 }
 </style>
