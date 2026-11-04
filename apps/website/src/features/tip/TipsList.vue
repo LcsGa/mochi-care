@@ -41,5 +41,9 @@ import { UiHeading } from "design-system/heading";
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--tips-listitem-min-size)), 1fr));
   gap: var(--tips-list-gap);
+
+  > li .ui-heading {
+    margin-block-end: var(--size-1);
+  }
 }
 </style>
