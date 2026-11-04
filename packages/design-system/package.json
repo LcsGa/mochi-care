@@ -30,6 +30,7 @@
     "./divider": "./src/divider/index.ts",
     "./fact": "./src/fact/index.ts",
     "./heading": "./src/heading/index.ts",
+    "./list": "./src/list/index.ts",
     "./tile": "./src/tile/index.ts"
   },
   "publishConfig": {
