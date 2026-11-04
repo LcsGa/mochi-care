@@ -230,6 +230,9 @@ importers:
       '@lucide/vue':
         specifier: 'catalog:'
         version: 1.66.0(vue@3.5.44(typescript@6.0.3))
+      '@vueuse/core':
+        specifier: 'catalog:'
+        version: 15.0.0(vue@3.5.44(typescript@6.0.3))
       design-system:
         specifier: workspace:*
         version: link:../../packages/design-system
@@ -2192,6 +2195,13 @@ snapshots:
       typescript: 6.0.3
       vue: 3.5.44(typescript@6.0.3)
 
+  '@vueuse/core@15.0.0(vue@3.5.44(typescript@6.0.3))':
+    dependencies:
+      '@types/web-bluetooth': 0.0.21
+      '@vueuse/metadata': 15.0.0
+      '@vueuse/shared': 15.0.0(vue@3.5.44(typescript@6.0.3))
+      vue: 3.5.44(typescript@6.0.3)
+
   '@vueuse/core@15.0.0(vue@3.5.44(typescript@7.0.2))':
     dependencies:
       '@types/web-bluetooth': 0.0.21
@@ -2200,6 +2210,10 @@ snapshots:
       vue: 3.5.44(typescript@7.0.2)
 
   '@vueuse/metadata@15.0.0': {}
+
+  '@vueuse/shared@15.0.0(vue@3.5.44(typescript@6.0.3))':
+    dependencies:
+      vue: 3.5.44(typescript@6.0.3)
 
   '@vueuse/shared@15.0.0(vue@3.5.44(typescript@7.0.2))':
     dependencies:
