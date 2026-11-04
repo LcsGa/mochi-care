@@ -12,7 +12,7 @@ import { UiListItem } from "design-system/list";
 </script>
 
 <template>
-  <UiCard as="article">
+  <UiCard class="monitoring-card" as="article">
     <ul>
       <UiListItem>
         <template #icon><LucideEyeClosed class="alert" /></template>
@@ -71,3 +71,9 @@ import { UiListItem } from "design-system/list";
     </ul>
   </UiCard>
 </template>
+
+<style>
+.monitoring-card hgroup ~ p {
+  font-weight: 700;
+}
+</style>
