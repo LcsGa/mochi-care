@@ -77,3 +77,17 @@ import { UiListItem } from "design-system/list";
   font-weight: 700;
 }
 </style>
+
+<style>
+/* Impression : liste sur 2 colonnes pour gagner de la hauteur. */
+@media print {
+  .monitoring-card ul {
+    columns: 2;
+    column-gap: var(--size-6);
+
+    > .ui-list-item {
+      break-inside: avoid;
+    }
+  }
+}
+</style>

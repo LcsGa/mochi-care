@@ -50,6 +50,13 @@ const { variant = "outlined" } = defineProps<{ variant?: "outlined" | "tonal" }>
       inline-size: var(--size-5);
       block-size: var(--size-5);
     }
+
+    /* Les fonds ne sont pas imprimés par défaut : on évite le texte blanc sur blanc. */
+    @media print {
+      background: none;
+      color: var(--color-ink);
+      border: var(--size-0-5) solid var(--color-ink);
+    }
   }
 }
 </style>

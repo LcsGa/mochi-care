@@ -89,6 +89,16 @@ import WipeCard from "./WipeCard.vue";
   column-gap: var(--treatments-card-group-column-gap);
   row-gap: var(--size-7);
 
+  @media print {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--size-3);
+    row-gap: var(--size-5);
+
+    .lacrynet-card {
+      margin-block-end: var(--size-2);
+    }
+  }
+
   .lacrynet-card {
     margin-block-end: var(--size-3-5);
   }
@@ -104,6 +114,25 @@ import WipeCard from "./WipeCard.vue";
 
   > .wipe-card {
     grid-column: 1 / -1;
+  }
+}
+</style>
+
+<style>
+/* Impression : cartes Matin / Après-midi / Soir plus compactes en hauteur. */
+@media print {
+  .treatments-card-group > .ui-card {
+    > .header {
+      padding: var(--size-2) var(--size-3);
+    }
+
+    > .content {
+      padding: var(--size-3);
+    }
+
+    .lacrynet-card .img {
+      block-size: var(--size-12);
+    }
   }
 }
 </style>

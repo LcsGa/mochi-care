@@ -80,4 +80,23 @@ import { UiHeading, UiHeadingLayer } from "design-system/heading";
     }
   }
 }
+
+/* Impression compacte : tout est réduit d'un coup pour tenir sur le moins de pages possible. */
+@media print {
+  @page {
+    margin: 8mm;
+  }
+
+  html {
+    zoom: 0.56;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  #app > section {
+    margin-block-start: var(--size-6);
+  }
+}
 </style>
