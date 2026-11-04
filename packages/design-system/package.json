@@ -44,6 +44,7 @@
   "dependencies": {
     "@fontsource/atkinson-hyperlegible": "catalog:",
     "@lucide/vue": "catalog:",
+    "@vueuse/core": "catalog:",
     "vue": "catalog:"
   },
   "devDependencies": {

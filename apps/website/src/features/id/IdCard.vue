@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LucideCake, LucidePhone, LucideWeight } from "@lucide/vue";
+import { LucideCake, LucideDog, LucidePhone, LucideVenus, LucideWeight } from "@lucide/vue";
 import { UiAvatar } from "design-system/avatar";
 import { UiButton } from "design-system/button";
 import { UiCard } from "design-system/card";
@@ -12,13 +12,16 @@ import IdCardCheckList from "./IdCardCheckList.vue";
 <template>
   <UiCard class="id-card" as="article" aria-label="Carnet de santé de Mochi">
     <header class="header">
-      <UiAvatar>
+      <UiAvatar size="large">
         <img src="@/assets/mochi.webp" alt="Photo portrait de Mochi" />
       </UiAvatar>
 
-      <UiHeading level="1">Mochi</UiHeading>
-      <p>Carlin, femelle. Voici tout ce qu'il faut savoir pour s'occuper d'elle</p>
-      <small>Consignes à jour au 7 novembre 2026.</small>
+      <hgroup>
+        <UiHeading level="1">
+          Mochi <UiAvatar size="medium"><LucideVenus /></UiAvatar>
+        </UiHeading>
+        <p>Consignes à jour au 7 novembre 2026.</p>
+      </hgroup>
 
       <UiButton as="a" href="#veterinarians">
         <LucidePhone />
@@ -29,6 +32,7 @@ import IdCardCheckList from "./IdCardCheckList.vue";
     <UiDivider />
 
     <div class="metadata" role="group">
+      <UiFact :icon="LucideDog" label="Race" value="Carlin" />
       <UiFact :icon="LucideWeight" label="Poids" value="7,5 kg" />
       <UiFact :icon="LucideCake" label="Âge" value="4 ans" meta="née le 27 juin 2022" />
     </div>
@@ -41,36 +45,32 @@ import IdCardCheckList from "./IdCardCheckList.vue";
 .id-card > .content {
   container-type: inline-size;
 
-  --data-cols: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
   --data-cols-gap: var(--size-3);
 
   > .header {
     display: grid;
     align-items: center;
     column-gap: var(--size-6);
-    grid-template:
-      "avatar heading action"
-      "avatar description action"
-      "avatar meta action" / auto 1fr auto;
+    grid-template: "avatar description action" / auto 1fr auto;
 
-    @container (inline-size <= 980px) {
+    > hgroup > p {
+      margin-block-start: var(--size-1-5);
+    }
+
+    @container (inline-size <= 800px) {
       grid-template:
-        "avatar heading"
         "avatar description"
-        "avatar meta"
         "action action" / auto 1fr;
 
       > .ui-button {
-        margin-block-start: var(--size-4);
+        margin-block-start: var(--size-5);
       }
     }
 
     @container (inline-size <= 640px) {
       grid-template:
         "avatar"
-        "heading"
         "description"
-        "meta"
         "action" / 1fr;
 
       > .ui-avatar {
@@ -112,9 +112,12 @@ import IdCardCheckList from "./IdCardCheckList.vue";
   }
 
   > .metadata {
-    display: grid;
-    grid-template-columns: var(--data-cols);
+    display: flex;
     gap: var(--data-cols-gap);
+
+    > * {
+      flex: 1;
+    }
 
     + * {
       margin-block-start: var(--size-5);

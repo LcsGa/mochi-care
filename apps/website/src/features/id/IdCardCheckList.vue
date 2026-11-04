@@ -28,7 +28,7 @@ import { UiCard } from "design-system/card";
 .id-card-check-list {
   list-style: none;
   display: grid;
-  grid-template-columns: var(--data-cols);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
   column-gap: var(--data-cols-gap);
   row-gap: var(--size-2);
 
