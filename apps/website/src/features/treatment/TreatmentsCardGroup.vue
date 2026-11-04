@@ -2,7 +2,7 @@
 import { LucideCloudSun, LucideMoon, LucideSunrise } from "@lucide/vue";
 import { UiCard } from "design-system/card";
 import { UiHeading } from "design-system/heading";
-import AnHyproCard from "./cards/AnHyproCard.vue";
+import AnHyProCard from "./cards/AnHyProCard.vue";
 import LacrynetCard from "./cards/LacrynetCard.vue";
 import MaxidrolCard from "./cards/MaxidrolCard.vue";
 import RegefluidCard from "./cards/RegefluidCard.vue";
@@ -25,7 +25,7 @@ import RegefluidCard from "./cards/RegefluidCard.vue";
 
       <ol>
         <li><MaxidrolCard /></li>
-        <li><AnHyproCard /></li>
+        <li><AnHyProCard /></li>
         <li><RegefluidCard /></li>
       </ol>
     </UiCard>
