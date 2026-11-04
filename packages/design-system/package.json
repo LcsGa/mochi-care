@@ -26,6 +26,7 @@
     "./button": "./src/button/index.ts",
     "./callout": "./src/callout/index.ts",
     "./card": "./src/card/index.ts",
+    "./chip": "./src/chip/index.ts",
     "./divider": "./src/divider/index.ts",
     "./fact": "./src/fact/index.ts",
     "./heading": "./src/heading/index.ts",

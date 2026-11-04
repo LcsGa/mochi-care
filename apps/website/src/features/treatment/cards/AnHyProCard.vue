@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useId } from "vue";
 import TreatmentCard from "../TreatmentCard.vue";
+import TimerChip from "./chips/TimerChip.vue";
 import DropTile from "./tiles/DropTile.vue";
 import TreatTile from "./tiles/TreatTile.vue";
 
@@ -17,4 +18,6 @@ const id = `an-hypro-${useId()}`;
 
     <TreatTile />
   </TreatmentCard>
+
+  <TimerChip :duration="15" />
 </template>

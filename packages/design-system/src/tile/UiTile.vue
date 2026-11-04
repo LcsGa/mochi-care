@@ -44,6 +44,7 @@ const { variant = "outlined" } = defineProps<{ variant?: "outlined" | "tonal" }>
   &.tonal {
     background: var(--color-pink);
     color: var(--color-on-pink);
+    font-weight: 700;
 
     > .content > .icon > .lucide {
       inline-size: var(--size-5);

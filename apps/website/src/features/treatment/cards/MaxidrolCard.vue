@@ -2,6 +2,7 @@
 import { UiCallout } from "design-system/callout";
 import { useId } from "vue";
 import TreatmentCard from "../TreatmentCard.vue";
+import TimerChip from "./chips/TimerChip.vue";
 import DropTile from "./tiles/DropTile.vue";
 import TreatTile from "./tiles/TreatTile.vue";
 
@@ -22,4 +23,6 @@ const id = `maxidrol-${useId()}`;
       Œil fermé ? <strong>Ne pas mettre de Maxidrol</strong> et appeler le vétérinaire.
     </UiCallout>
   </TreatmentCard>
+
+  <TimerChip :duration="5" />
 </template>

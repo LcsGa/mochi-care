@@ -10,6 +10,6 @@ const { count = 1 } = defineProps<{ count?: number }>();
     <template #icon>
       <LucideCandy v-for="i in count" :key="i" />
     </template>
-    <strong>{{ count }} bonbon{{ count > 1 ? "s" : "" }}</strong>
+    {{ count }} bonbon{{ count > 1 ? "s" : "" }}
   </UiTile>
 </template>
