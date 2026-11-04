@@ -6,25 +6,25 @@ import { UiCard } from "design-system/card";
 
 <template>
   <ul class="id-card-check-list">
-    <UiCard as="li">
+    <UiCard class="listitem" as="li">
       <LucideSyringe /> <span>Vaccins <small>(dont toux du chenil)</small></span>
       <UiBadge variant="status" severity="success">à jour</UiBadge>
     </UiCard>
-    <UiCard as="li">
+    <UiCard class="listitem" as="li">
       <LucideShieldCheck /> Vermifuge <UiBadge variant="status" severity="success">à jour</UiBadge>
     </UiCard>
-    <UiCard as="li">
+    <UiCard class="listitem" as="li">
       <LucideShieldCheck /> Antiparasitaire
       <UiBadge variant="status" severity="success">à jour</UiBadge></UiCard
     >
-    <UiCard as="li">
+    <UiCard class="listitem" as="li">
       <LucideSyringe /> <span>Cytopoint <small>(pour sa peau atopique)</small></span>
       <UiBadge variant="status" severity="success">à jour</UiBadge>
     </UiCard>
   </ul>
 </template>
 
-<style scoped>
+<style>
 .id-card-check-list {
   list-style: none;
   display: grid;
@@ -32,7 +32,7 @@ import { UiCard } from "design-system/card";
   column-gap: var(--data-cols-gap);
   row-gap: --size(2);
 
-  > li {
+  > li > .content {
     display: grid;
     align-items: center;
     justify-items: start;

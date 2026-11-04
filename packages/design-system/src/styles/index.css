@@ -8,24 +8,49 @@
   padding: 0;
   box-sizing: border-box;
   text-wrap: pretty;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-pink) var(--color-surface);
 }
 
 body {
-  padding: --size(4);
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-pink);
+  padding: --size(6) --size(4);
   background: var(--color-bg);
   font: var(--font-body);
   color: var(--color-ink);
 }
 
+hgroup > p {
+  color: var(--color-muted);
+  font-size: 1rem;
+}
+
 .bold,
 strong {
   font: var(--font-body-strong);
+  font-size: 1em;
 }
 
 .small,
 small {
   font: var(--font-small);
   color: var(--color-muted);
+}
+
+.tag {
+  font: var(--font-label);
+  letter-spacing: var(--font-label-letter-spacing);
+  color: var(--color-muted);
+  text-transform: uppercase;
+}
+
+.img {
+  block-size: --size(24);
+  padding: --size(1.5);
+  border-radius: var(--radius-md);
+  background: white;
+  inline-size: fit-content;
+
+  > img {
+    block-size: 100%;
+  }
 }

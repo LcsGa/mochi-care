@@ -37,8 +37,8 @@ import IdCardCheckList from "./IdCardCheckList.vue";
   </UiCard>
 </template>
 
-<style scoped>
-.id-card {
+<style>
+.id-card > .content {
   container-type: inline-size;
 
   --data-cols: repeat(auto-fit, minmax(min(100%, 420px), 1fr));

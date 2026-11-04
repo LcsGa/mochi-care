@@ -1,5 +1,0 @@
-body > #app {
-  margin: auto;
-  max-inline-size: --size(320);
-  inline-size: 100%;
-}

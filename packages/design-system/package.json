@@ -24,6 +24,7 @@
     "./avatar": "./src/avatar/index.ts",
     "./badge": "./src/badge/index.ts",
     "./button": "./src/button/index.ts",
+    "./callout": "./src/callout/index.ts",
     "./card": "./src/card/index.ts",
     "./divider": "./src/divider/index.ts",
     "./fact": "./src/fact/index.ts",

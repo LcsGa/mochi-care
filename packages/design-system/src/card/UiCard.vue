@@ -1,31 +1,61 @@
 <script setup lang="ts">
 import { UiHeadingLayer } from "design-system/heading";
-import type { Component } from "vue";
+import { type Component } from "vue";
 
 const { as = "div", variant = "outlined" } = defineProps<{
   as?: keyof HTMLElementTagNameMap | Component;
-  variant?: "outlined" | "tonal";
+  variant?: "outlined" | "dashed" | "tonal";
+  contentClass?: object;
 }>();
 </script>
 
 <template>
   <UiHeadingLayer class="ui-card" :class="variant" :as>
-    <slot />
+    <header class="header" v-if="$slots.header">
+      <slot name="header" />
+    </header>
+
+    <div class="image" v-if="$slots.image">
+      <slot name="image" />
+    </div>
+
+    <div class="content">
+      <slot />
+    </div>
   </UiHeadingLayer>
 </template>
 
 <style scoped>
 :where(.ui-card) {
-  padding: --size(5.5);
   background: var(--color-surface);
   border-radius: var(--radius-xl);
+  overflow: hidden;
 
-  &.outlined {
+  &.outlined,
+  &.dashed {
     border: --size(px) solid var(--color-line);
+  }
+
+  &.dashed {
+    border-style: dashed;
   }
 
   &.tonal {
     background: var(--color-pink-soft);
+  }
+
+  > .header {
+    padding: --size(4) --size(5);
+    background: var(--color-pink-soft);
+
+    > :slotted(hgroup) {
+      display: grid;
+      row-gap: --size(0.5);
+    }
+  }
+
+  > :where(.content) {
+    padding: --size(5.5);
   }
 }
 </style>

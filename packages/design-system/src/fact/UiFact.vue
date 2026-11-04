@@ -23,33 +23,36 @@ const { icon, label, value, meta } = defineProps<{
   </UiCard>
 </template>
 
-<style scoped>
+<style>
 .ui-fact {
-  display: inline flex;
-  align-items: center;
-  gap: --size(3);
-  padding: --size(3) --size(4);
   border-radius: var(--radius-lg);
 
-  > .lucide {
-    color: var(--color-pink);
-    inline-size: --size(7);
-    block-size: --size(7);
-  }
+  > .content {
+    display: inline flex;
+    align-items: center;
+    gap: --size(3);
+    padding: --size(3) --size(4);
 
-  > dl {
-    display: inline grid;
-    gap: --size(1.5);
-
-    > dt {
-      font: var(--font-label);
-      text-transform: uppercase;
-      color: var(--color-muted);
+    > .lucide {
+      color: var(--color-pink);
+      inline-size: --size(7);
+      block-size: --size(7);
     }
 
-    > dd {
-      font: var(--font-figure);
-      font-variant-numeric: tabular-nums;
+    > dl {
+      display: inline grid;
+      gap: --size(1.5);
+
+      > dt {
+        font: var(--font-label);
+        text-transform: uppercase;
+        color: var(--color-muted);
+      }
+
+      > dd {
+        font: var(--font-figure);
+        font-variant-numeric: tabular-nums;
+      }
     }
   }
 }

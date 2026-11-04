@@ -17,7 +17,16 @@ const computedLevel = computed(() => level ?? headingLevel);
 
 <style scoped>
 .ui-heading {
+  display: flex;
+  align-items: center;
+  gap: --size(2.5);
   color: var(--color-ink);
+
+  > :slotted(.lucide) {
+    color: var(--color-pink);
+    inline-size: 1.1em;
+    block-size: 1.1em;
+  }
 
   &[aria-level="1"] {
     font: var(--font-display);
