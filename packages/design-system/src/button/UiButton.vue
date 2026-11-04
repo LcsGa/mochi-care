@@ -12,8 +12,8 @@ const { as = "button" } = defineProps<{ as: "button" | "a" }>();
 .ui-button {
   display: inline flex;
   align-items: center;
-  gap: --size(3);
-  padding: --size(3) --size(5);
+  gap: var(--size-3);
+  padding: var(--size-3) var(--size-5);
   border-radius: var(--radius-pill);
   background: var(--color-pink);
   color: var(--color-on-pink);
@@ -21,8 +21,8 @@ const { as = "button" } = defineProps<{ as: "button" | "a" }>();
   text-decoration: none;
 
   > :slotted(.lucide) {
-    inline-size: --size(5.5);
-    block-size: --size(5.5);
+    inline-size: var(--size-5-5);
+    block-size: var(--size-5-5);
   }
 }
 </style>

@@ -28,7 +28,7 @@ const icon = computed(() => (severity ? iconMap[severity] : null));
 .ui-badge {
   display: inline flex;
   align-items: center;
-  gap: --size(1.25);
+  gap: var(--size-1-25);
   font: var(--font-label);
 
   > :slotted(.lucide),
@@ -56,9 +56,9 @@ const icon = computed(() => (severity ? iconMap[severity] : null));
   &.dashed {
     background: var(--color-surface);
     color: var(--color-pink);
-    border: --size(px) dashed var(--color-pink-mid);
+    border: var(--size-px) dashed var(--color-pink-mid);
     border-radius: var(--radius-pill);
-    padding: --size(1) --size(3);
+    padding: var(--size-1) var(--size-3);
   }
 }
 </style>

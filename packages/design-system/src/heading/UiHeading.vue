@@ -19,7 +19,7 @@ const computedLevel = computed(() => level ?? headingLevel);
 .ui-heading {
   display: flex;
   align-items: center;
-  gap: --size(2.5);
+  gap: var(--size-2-5);
   color: var(--color-ink);
 
   > :slotted(.lucide) {

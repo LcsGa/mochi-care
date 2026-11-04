@@ -21,16 +21,16 @@ const iconMap = {
 <style scoped>
 .ui-callout {
   display: flex;
-  gap: --size(3);
+  gap: var(--size-3);
   align-items: start;
-  padding: --size(3) --size(4);
+  padding: var(--size-3) var(--size-4);
   background: var(--ui-callout-bg);
   color: var(--color-ink);
   border-radius: var(--radius-md);
-  border-inline-start: --size(1) solid var(--ui-callout-color);
+  border-inline-start: var(--size-1) solid var(--ui-callout-color);
 
   > .lucide {
-    margin-block-start: --size(0.75);
+    margin-block-start: var(--size-0-75);
     flex-shrink: 0;
     color: var(--ui-callout-color);
     inline-size: 1.15em;
@@ -48,7 +48,7 @@ const iconMap = {
   }
 
   &.compact {
-    padding: --size(2) --size(3);
+    padding: var(--size-2) var(--size-3);
   }
 }
 </style>

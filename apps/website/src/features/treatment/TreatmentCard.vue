@@ -19,16 +19,16 @@ const headingId = computed(() => `${id}-heading`);
 <style>
 .treatment-card {
   > .header {
-    padding: --size(2.5) --size(3.5);
+    padding: var(--size-2-5) var(--size-3-5);
 
     > .treatment-heading {
-      gap: --size(3);
+      gap: var(--size-3);
 
       &::before {
         content: counter(step);
         display: grid;
         place-items: center;
-        inline-size: --size(10);
+        inline-size: var(--size-10);
         aspect-ratio: 1;
         background: var(--color-pink);
         color: var(--color-on-pink);
@@ -39,8 +39,8 @@ const headingId = computed(() => `${id}-heading`);
 
   > .content {
     display: grid;
-    gap: --size(2);
-    padding: --size(3);
+    gap: var(--size-2);
+    padding: var(--size-3);
   }
 }
 </style>

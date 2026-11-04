@@ -1,5 +1,5 @@
 :root {
-  --shadow-highlight: 0 --size(2.5) --size(7)
+  --shadow-highlight: 0 var(--size-2-5) var(--size-7)
     light-dark(hsl(339.9 57.3% 45.9% / 0.28), hsl(339.8 82.1% 75.9% / 0.28));
 }
 

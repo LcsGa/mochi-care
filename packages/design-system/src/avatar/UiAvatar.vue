@@ -8,11 +8,11 @@
 .ui-avatar {
   display: inline grid;
   place-items: center;
-  inline-size: --size(32);
+  inline-size: var(--size-32);
   aspect-ratio: 1;
   border-radius: var(--radius-round);
   overflow: clip;
-  border: --size(1) solid var(--color-pink-mid);
+  border: var(--size-1) solid var(--color-pink-mid);
   background: var(--color-pink-soft);
   color: var(--color-pink);
 

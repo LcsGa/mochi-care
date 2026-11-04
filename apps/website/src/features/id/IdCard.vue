@@ -42,12 +42,12 @@ import IdCardCheckList from "./IdCardCheckList.vue";
   container-type: inline-size;
 
   --data-cols: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
-  --data-cols-gap: --size(3);
+  --data-cols-gap: var(--size-3);
 
   > .header {
     display: grid;
     align-items: center;
-    column-gap: --size(6);
+    column-gap: var(--size-6);
     grid-template:
       "avatar heading action"
       "avatar description action"
@@ -61,7 +61,7 @@ import IdCardCheckList from "./IdCardCheckList.vue";
         "action action" / auto 1fr;
 
       > .ui-button {
-        margin-block-start: --size(4);
+        margin-block-start: var(--size-4);
       }
     }
 
@@ -74,7 +74,7 @@ import IdCardCheckList from "./IdCardCheckList.vue";
         "action" / 1fr;
 
       > .ui-avatar {
-        margin-block-end: --size(4);
+        margin-block-end: var(--size-4);
       }
     }
 
@@ -117,7 +117,7 @@ import IdCardCheckList from "./IdCardCheckList.vue";
     gap: var(--data-cols-gap);
 
     + * {
-      margin-block-start: --size(5);
+      margin-block-start: var(--size-5);
     }
   }
 }

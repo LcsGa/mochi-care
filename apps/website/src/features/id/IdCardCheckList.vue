@@ -30,15 +30,15 @@ import { UiCard } from "design-system/card";
   display: grid;
   grid-template-columns: var(--data-cols);
   column-gap: var(--data-cols-gap);
-  row-gap: --size(2);
+  row-gap: var(--size-2);
 
   > li > .content {
     display: grid;
     align-items: center;
     justify-items: start;
     grid-template-columns: auto 1fr auto;
-    gap: --size(3);
-    padding: --size(3);
+    gap: var(--size-3);
+    padding: var(--size-3);
 
     > .lucide {
       color: var(--color-pink);
