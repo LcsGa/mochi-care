@@ -37,6 +37,7 @@ const { as = "div", variant = "outlined" } = defineProps<{
 
   &:where(.dashed) {
     border-style: dashed;
+    border-width: var(--size-0-5);
   }
 
   &:where(.tonal) {

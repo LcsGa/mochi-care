@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LucideClock } from "@lucide/vue";
+import { LucideTimer } from "@lucide/vue";
 import { UiChip } from "design-system/chip";
 
 const { duration } = defineProps<{ duration: number }>();
@@ -9,8 +9,8 @@ const { duration } = defineProps<{ duration: number }>();
   <div class="timer-chip">
     <div class="line"></div>
 
-    <UiChip>
-      <LucideClock />
+    <UiChip shape="pill">
+      <LucideTimer />
       <strong>Attendre {{ duration }} minutes</strong>
     </UiChip>
   </div>

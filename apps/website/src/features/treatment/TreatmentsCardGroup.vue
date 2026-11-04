@@ -6,6 +6,7 @@ import AnHyProCard from "./cards/AnHyProCard.vue";
 import LacrynetCard from "./cards/LacrynetCard.vue";
 import MaxidrolCard from "./cards/MaxidrolCard.vue";
 import RegefluidCard from "./cards/RegefluidCard.vue";
+import WipeCard from "./WipeCard.vue";
 </script>
 
 <template>
@@ -68,6 +69,8 @@ import RegefluidCard from "./cards/RegefluidCard.vue";
         <li><RegefluidCard /></li>
       </ol>
     </UiCard>
+
+    <WipeCard />
   </div>
 </template>
 
@@ -76,7 +79,8 @@ import RegefluidCard from "./cards/RegefluidCard.vue";
   display: grid;
   align-items: start;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-  gap: var(--size-5);
+  column-gap: var(--size-5);
+  row-gap: var(--size-7);
 
   .lacrynet-card {
     margin-block-end: var(--size-3-5);
@@ -89,6 +93,10 @@ import RegefluidCard from "./cards/RegefluidCard.vue";
     li {
       counter-increment: step;
     }
+  }
+
+  > .wipe-card {
+    grid-column: 1 / -1;
   }
 }
 </style>
