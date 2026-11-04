@@ -39,19 +39,19 @@ import { UiHeading, UiHeadingLayer } from "design-system/heading";
 <style>
 #app {
   margin: auto;
-  max-inline-size: --size(320);
+  max-inline-size: var(--size-320);
   inline-size: 100%;
 
   > section {
-    margin-block-start: --size(12);
+    margin-block-start: var(--size-12);
 
     > .ui-heading,
     > hgroup {
-      margin-block-end: --size(3.5);
+      margin-block-end: var(--size-3-5);
     }
 
     > hgroup > .ui-heading {
-      margin-block-end: --size(3.5);
+      margin-block-end: var(--size-3-5);
     }
   }
 }

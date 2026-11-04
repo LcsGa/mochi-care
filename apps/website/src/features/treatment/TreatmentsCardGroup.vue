@@ -76,10 +76,10 @@ import RegefluidCard from "./cards/RegefluidCard.vue";
   display: grid;
   align-items: start;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-  gap: --size(5);
+  gap: var(--size-5);
 
   .lacrynet-card {
-    margin-block-end: --size(3.5);
+    margin-block-end: var(--size-3-5);
   }
 
   ol {

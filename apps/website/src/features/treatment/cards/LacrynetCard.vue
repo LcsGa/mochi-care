@@ -24,8 +24,8 @@ import { UiCard } from "design-system/card";
 .lacrynet-card > .content {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: --size(3);
-  padding: --size(3);
+  gap: var(--size-3);
+  padding: var(--size-3);
 
   > .ui-callout {
     grid-column: 1 / -1;

@@ -1,3 +1,23 @@
-@function --size(--size type(<number> | px)) {
-  result: if(style(--size: px): 1px; else: calc(var(--size) * 4px));
+/* Échelle de tailles : --size-N = N × 4px (le point décimal s'écrit avec un tiret). */
+:root {
+  --size-px: 1px;
+  --size-0-5: 2px;
+  --size-0-75: 3px;
+  --size-1: 4px;
+  --size-1-25: 5px;
+  --size-1-5: 6px;
+  --size-2: 8px;
+  --size-2-5: 10px;
+  --size-3: 12px;
+  --size-3-5: 14px;
+  --size-4: 16px;
+  --size-5: 20px;
+  --size-5-5: 22px;
+  --size-6: 24px;
+  --size-7: 28px;
+  --size-10: 40px;
+  --size-12: 48px;
+  --size-24: 96px;
+  --size-32: 128px;
+  --size-320: 1280px;
 }

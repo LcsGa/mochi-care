@@ -40,11 +40,11 @@ import { UiFact } from "design-system/fact";
 [role="group"] {
   display: flex;
   flex-wrap: wrap;
-  gap: --size(3);
-  margin-block-start: --size(2);
+  gap: var(--size-3);
+  margin-block-start: var(--size-2);
 }
 
 .ui-callout {
-  margin-block-start: --size(3.5);
+  margin-block-start: var(--size-3-5);
 }
 </style>

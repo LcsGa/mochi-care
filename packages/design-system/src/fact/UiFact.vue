@@ -30,18 +30,18 @@ const { icon, label, value, meta } = defineProps<{
   > .content {
     display: inline flex;
     align-items: center;
-    gap: --size(3);
-    padding: --size(3) --size(4);
+    gap: var(--size-3);
+    padding: var(--size-3) var(--size-4);
 
     > .lucide {
       color: var(--color-pink);
-      inline-size: --size(7);
-      block-size: --size(7);
+      inline-size: var(--size-7);
+      block-size: var(--size-7);
     }
 
     > dl {
       display: inline grid;
-      gap: --size(1.5);
+      gap: var(--size-1-5);
 
       > dt {
         font: var(--font-label);

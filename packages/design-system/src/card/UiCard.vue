@@ -33,7 +33,7 @@ const { as = "div", variant = "outlined" } = defineProps<{
 
   &.outlined,
   &.dashed {
-    border: --size(px) solid var(--color-line);
+    border: var(--size-px) solid var(--color-line);
   }
 
   &.dashed {
@@ -45,17 +45,17 @@ const { as = "div", variant = "outlined" } = defineProps<{
   }
 
   > .header {
-    padding: --size(4) --size(5);
+    padding: var(--size-4) var(--size-5);
     background: var(--color-pink-soft);
 
     > :slotted(hgroup) {
       display: grid;
-      row-gap: --size(0.5);
+      row-gap: var(--size-0-5);
     }
   }
 
   > :where(.content) {
-    padding: --size(5.5);
+    padding: var(--size-5-5);
   }
 }
 </style>
