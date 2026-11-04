@@ -76,10 +76,17 @@ import WipeCard from "./WipeCard.vue";
 
 <style scoped>
 .treatments-card-group {
+  --treatments-card-group-column-gap: var(--size-5);
+  --treatments-card-group-min-inline-size: calc(
+    (var(--body-max-inline-size) - 2 * var(--treatments-card-group-column-gap)) / 3
+  );
   display: grid;
   align-items: start;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-  column-gap: var(--size-5);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, var(--treatments-card-group-min-inline-size)), 1fr)
+  );
+  column-gap: var(--treatments-card-group-column-gap);
   row-gap: var(--size-7);
 
   .lacrynet-card {

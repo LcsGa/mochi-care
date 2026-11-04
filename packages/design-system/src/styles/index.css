@@ -13,7 +13,8 @@
 }
 
 body {
-  padding: var(--size-6) var(--size-4);
+  padding-block: var(--size-6) var(--size-12);
+  padding-inline: var(--size-4);
   background: var(--color-bg);
   font: var(--font-body);
   color: var(--color-ink);

@@ -23,7 +23,7 @@ import IdCardCheckList from "./IdCardCheckList.vue";
         <p>Consignes à jour au 7 novembre 2026.</p>
       </hgroup>
 
-      <UiButton as="a" href="#veterinarians">
+      <UiButton as="a" href="#contacts">
         <LucidePhone />
         Un soucis ? Numéros du véto
       </UiButton>

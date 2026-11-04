@@ -1,8 +1,15 @@
 <script setup lang="ts">
 import IdCard from "@/features/id/IdCard.vue";
 import MealsCard from "@/features/meal/MealsCard.vue";
+import TipsList from "@/features/tip/TipsList.vue";
 import TreatmentsCardGroup from "@/features/treatment/TreatmentsCardGroup.vue";
-import { LucideEye, LucideUtensils } from "@lucide/vue";
+import {
+  LucideEye,
+  LucideHeartPulse,
+  LucideLightbulb,
+  LucidePhone,
+  LucideUtensils,
+} from "@lucide/vue";
 import { UiHeading, UiHeadingLayer } from "design-system/heading";
 </script>
 
@@ -34,12 +41,26 @@ import { UiHeading, UiHeadingLayer } from "design-system/heading";
 
     <TreatmentsCardGroup />
   </UiHeadingLayer>
+
+  <UiHeadingLayer as="section" id="monitoring" aria-labelledby="monitoring-title">
+    <UiHeading id="monitoring-title"><LucideHeartPulse /> Ce qu'il faut serveiller</UiHeading>
+  </UiHeadingLayer>
+
+  <UiHeadingLayer as="section" id="contacts" aria-labelledby="contacts-title">
+    <UiHeading id="contacts-title"><LucidePhone /> Qui appeler</UiHeading>
+  </UiHeadingLayer>
+
+  <UiHeadingLayer as="section" id="tips" aria-labelledby="tips-title">
+    <UiHeading id="tips-title"><LucideLightbulb /> Bons réflexes</UiHeading>
+    <TipsList />
+  </UiHeadingLayer>
 </template>
 
 <style>
 #app {
+  --body-max-inline-size: var(--size-320);
+  max-inline-size: var(--body-max-inline-size);
   margin: auto;
-  max-inline-size: var(--size-320);
   inline-size: 100%;
 
   > section {
