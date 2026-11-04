@@ -55,3 +55,7 @@ small {
     block-size: 100%;
   }
 }
+
+.alert {
+  color: var(--color-danger) !important;
+}
