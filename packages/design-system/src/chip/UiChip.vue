@@ -2,13 +2,16 @@
 import { UiCard } from "design-system/card";
 import { computed } from "vue";
 
-const { shape = "tile" } = defineProps<{ shape?: "pill" | "tile" }>();
+const { as = "span", shape = "tile" } = defineProps<{
+  as?: "a" | "button" | "span";
+  shape?: "pill" | "tile";
+}>();
 
 const variant = computed(() => (shape === "pill" ? "outlined" : "tonal"));
 </script>
 
 <template>
-  <UiCard as="span" class="ui-chip" :class="shape" :variant>
+  <UiCard :as class="ui-chip" :class="shape" :variant>
     <slot />
   </UiCard>
 </template>
@@ -16,6 +19,12 @@ const variant = computed(() => (shape === "pill" ? "outlined" : "tonal"));
 <style>
 .ui-chip {
   display: inline-block;
+
+  &:is(a, button) {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--color-ink);
+  }
 
   > .content {
     display: flex;
