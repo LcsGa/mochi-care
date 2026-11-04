@@ -12,10 +12,12 @@ const iconMap = {
 </script>
 
 <template>
-  <p class="ui-callout" :class="[severity, { compact }]">
+  <div class="ui-callout" :class="[severity, { compact }]">
     <component :is="iconMap[severity]" />
-    <slot />
-  </p>
+    <p>
+      <slot />
+    </p>
+  </div>
 </template>
 
 <style scoped>

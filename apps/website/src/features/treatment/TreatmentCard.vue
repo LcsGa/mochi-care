@@ -13,11 +13,19 @@ const headingId = computed(() => `${id}-heading`);
     <template #header>
       <UiHeading class="treatment-heading" :id="headingId">{{ heading }}</UiHeading>
     </template>
+
+    <template #image>
+      <slot name="image" />
+    </template>
+
+    <slot />
   </UiCard>
 </template>
 
 <style>
 .treatment-card {
+  border-width: var(--size-0-5);
+
   > .header {
     padding: var(--size-2-5) var(--size-3-5);
 

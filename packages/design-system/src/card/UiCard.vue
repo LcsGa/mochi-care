@@ -31,16 +31,15 @@ const { as = "div", variant = "outlined" } = defineProps<{
   border-radius: var(--radius-xl);
   overflow: hidden;
 
-  &.outlined,
-  &.dashed {
+  &:where(.outlined, .dashed) {
     border: var(--size-px) solid var(--color-line);
   }
 
-  &.dashed {
+  &:where(.dashed) {
     border-style: dashed;
   }
 
-  &.tonal {
+  &:where(.tonal) {
     background: var(--color-pink-soft);
   }
 
@@ -51,6 +50,17 @@ const { as = "div", variant = "outlined" } = defineProps<{
     > :slotted(hgroup) {
       display: grid;
       row-gap: var(--size-0-5);
+    }
+  }
+
+  > .image {
+    display: grid;
+    place-content: center;
+    padding: var(--size-2-5);
+    background: white;
+
+    > :slotted(img) {
+      block-size: var(--size-32);
     }
   }
 
