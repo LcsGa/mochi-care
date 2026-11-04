@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import ContactCard from "@/features/contact/ContactCard.vue";
 import IdCard from "@/features/id/IdCard.vue";
 import MealsCard from "@/features/meal/MealsCard.vue";
+import MonitoringCard from "@/features/monitoring/MonitoringCard.vue";
 import TipsList from "@/features/tip/TipsList.vue";
 import TreatmentsCardGroup from "@/features/treatment/TreatmentsCardGroup.vue";
 import {
@@ -44,10 +46,12 @@ import { UiHeading, UiHeadingLayer } from "design-system/heading";
 
   <UiHeadingLayer as="section" id="monitoring" aria-labelledby="monitoring-title">
     <UiHeading id="monitoring-title"><LucideHeartPulse /> Ce qu'il faut serveiller</UiHeading>
+    <MonitoringCard />
   </UiHeadingLayer>
 
   <UiHeadingLayer as="section" id="contacts" aria-labelledby="contacts-title">
     <UiHeading id="contacts-title"><LucidePhone /> Qui appeler</UiHeading>
+    <ContactCard />
   </UiHeadingLayer>
 
   <UiHeadingLayer as="section" id="tips" aria-labelledby="tips-title">
