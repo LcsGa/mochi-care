@@ -7,11 +7,38 @@ import LacrynetCard from "./cards/LacrynetCard.vue";
 import MaxidrolCard from "./cards/MaxidrolCard.vue";
 import RegefluidCard from "./cards/RegefluidCard.vue";
 import WipeCard from "./WipeCard.vue";
+import { useIntervalFn, useNow } from "@vueuse/core";
+import { computed } from "vue";
+
+type Session = "morning" | "afternoon" | "evening";
+
+const SESSION_START_HOURS = { morning: 5, afternoon: 13, evening: 18 } as const satisfies Record<
+  Session,
+  number
+>;
+
+const now = useNow({ scheduler: (update) => useIntervalFn(update, 60_000) });
+
+const currentSession = computed<Session>(() => {
+  const hour = now.value.getHours();
+  if (hour >= SESSION_START_HOURS.morning && hour < SESSION_START_HOURS.afternoon) return "morning";
+  if (hour >= SESSION_START_HOURS.afternoon && hour < SESSION_START_HOURS.evening)
+    return "afternoon";
+  return "evening";
+});
+
+const sessionAttrs = (session: Session) =>
+  currentSession.value === session ? { class: "is-current", "aria-current": "time" as const } : {};
 </script>
 
 <template>
   <div class="treatments-card-group" role="group">
-    <UiCard as="article" aria-labelledby="morning-title" aria-describedby="morning-description">
+    <UiCard
+      as="article"
+      v-bind="sessionAttrs('morning')"
+      aria-labelledby="morning-title"
+      aria-describedby="morning-description"
+    >
       <template #header>
         <hgroup>
           <UiHeading id="morning-title">
@@ -31,7 +58,12 @@ import WipeCard from "./WipeCard.vue";
       </ol>
     </UiCard>
 
-    <UiCard as="article" aria-labelledby="afternoon-title" aria-describedby="afternoon-description">
+    <UiCard
+      as="article"
+      v-bind="sessionAttrs('afternoon')"
+      aria-labelledby="afternoon-title"
+      aria-describedby="afternoon-description"
+    >
       <template #header>
         <hgroup>
           <UiHeading id="afternoon-title">
@@ -50,7 +82,12 @@ import WipeCard from "./WipeCard.vue";
       </ol>
     </UiCard>
 
-    <UiCard as="article" aria-labelledby="evening-title" aria-describedby="evening-description">
+    <UiCard
+      as="article"
+      v-bind="sessionAttrs('evening')"
+      aria-labelledby="evening-title"
+      aria-describedby="evening-description"
+    >
       <template #header>
         <hgroup>
           <UiHeading id="evening-title">
@@ -114,6 +151,28 @@ import WipeCard from "./WipeCard.vue";
 
   > .wipe-card {
     grid-column: 1 / -1;
+  }
+}
+</style>
+
+<style>
+@media screen {
+  .treatments-card-group > .ui-card {
+    @media (prefers-reduced-motion: no-preference) {
+      transition:
+        translate 0.2s,
+        box-shadow 0.2s;
+    }
+
+    &.is-current {
+      border: var(--size-0-75) solid var(--color-pink);
+      box-shadow: var(--shadow-highlight);
+      translate: 0 calc(-1 * var(--size-1-5));
+
+      > .header {
+        background: var(--color-pink-mid);
+      }
+    }
   }
 }
 </style>
