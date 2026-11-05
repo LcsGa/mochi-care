@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {
+  LucideEye,
   LucideFileText,
   LucideShieldCheck,
   LucideSiren,
@@ -28,6 +29,15 @@ import ContactChips from "./ContactChips.vue";
           phone="03 87 18 02 10"
           address="118 Rue de Pont-à-Mousson, 57950 Montigny-lès-Metz"
         />
+      </UiListItem>
+
+      <UiListItem>
+        <template #icon><LucideEye /></template>
+        <hgroup>
+          <UiHeading>Vétérinaire ophtalmologue</UiHeading>
+          <p>MVET, vétérinaires référés pour les yeux</p>
+        </hgroup>
+        <ContactChips phone="03 87 62 41 14" address="Rue du Fossé, 57155 Marly" />
       </UiListItem>
 
       <UiListItem>
