@@ -3,9 +3,13 @@ import { LucideMapPin, LucidePhone } from "@lucide/vue";
 import { UiChip } from "design-system/chip";
 import { computed } from "vue";
 
-const { phone, address } = defineProps<{ phone: string; address?: string }>();
+const { phone, address, mapsQuery } = defineProps<{
+  phone: string;
+  address?: string;
+  mapsQuery?: string;
+}>();
 const tel = computed(() => `tel:+33${phone.slice(1).replaceAll(" ", "")}`);
-const map = computed(() => `https://www.google.com/maps/dir//${address?.replaceAll(" ", "+")}`);
+const map = computed(() => `https://www.google.com/maps/dir//${(mapsQuery ?? address)?.replaceAll(" ", "+")}`);
 </script>
 
 <template>
