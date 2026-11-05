@@ -158,9 +158,11 @@ const sessionAttrs = (session: Session) =>
 <style>
 @media screen {
   .treatments-card-group > .ui-card {
-    transition:
-      translate 0.2s,
-      box-shadow 0.2s;
+    @media (prefers-reduced-motion: no-preference) {
+      transition:
+        translate 0.2s,
+        box-shadow 0.2s;
+    }
 
     &.is-current {
       border: var(--size-0-75) solid var(--color-pink);
@@ -170,16 +172,6 @@ const sessionAttrs = (session: Session) =>
       > .header {
         background: var(--color-pink-mid);
       }
-    }
-  }
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  .treatments-card-group > .ui-card {
-    transition: none;
-
-    &.is-current {
-      translate: none;
     }
   }
 }
