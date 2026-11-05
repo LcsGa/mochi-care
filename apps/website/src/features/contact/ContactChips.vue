@@ -12,9 +12,9 @@ const map = computed(() => `https://www.google.com/maps/dir//${address?.replaceA
   <div class="contact-chips" role="group">
     <UiChip as="a" :href="tel"><LucidePhone /> {{ phone }}</UiChip>
 
-    <UiChip v-if="address" as="a" :href="map" target="_blank"
-      ><LucideMapPin /> {{ address }}</UiChip
-    >
+    <UiChip v-if="address" as="a" :href="map" target="_blank">
+      <LucideMapPin /> {{ address }}
+    </UiChip>
 
     <slot />
   </div>

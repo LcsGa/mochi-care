@@ -8,7 +8,7 @@ import { careSheetUrl, insurerName } from "./careSheet";
 </script>
 
 <template>
-  <UiCard class="insurance-card" as="aside" variant="dashed">
+  <UiCard class="insurance-card" as="article" variant="dashed">
     <UiAvatar size="medium"><LucideShieldCheck /></UiAvatar>
 
     <hgroup>
@@ -61,13 +61,6 @@ import { careSheetUrl, insurerName } from "./careSheet";
       grid-template:
         "avatar text"
         ". action" / auto 1fr;
-    }
-
-    @container (inline-size <= 400px) {
-      padding: var(--size-4);
-      grid-template:
-        "avatar text"
-        "action action" / auto 1fr;
     }
   }
 }

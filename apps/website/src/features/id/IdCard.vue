@@ -121,13 +121,9 @@ import IdCardCheckList from "./IdCardCheckList.vue";
     > * {
       flex: 1;
     }
-
-    + * {
-      margin-block-start: var(--size-5);
-    }
   }
 
-  > .insurance-card {
+  > .metadata ~ * {
     margin-block-start: var(--size-5);
   }
 }
