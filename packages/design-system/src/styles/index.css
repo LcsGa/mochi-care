@@ -60,3 +60,7 @@ small {
 .alert {
   color: var(--color-danger) !important;
 }
+
+.lucide {
+  flex-shrink: 0;
+}

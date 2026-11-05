@@ -46,7 +46,6 @@ const compact = computed(() => width.value < COMPACT_THRESHOLD);
       color: var(--color-pink);
       inline-size: var(--size-7);
       block-size: var(--size-7);
-      flex-shrink: 0;
     }
 
     > dl {

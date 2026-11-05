@@ -33,7 +33,6 @@ const { as = "button", variant = "filled" } = defineProps<{
   }
 
   > :slotted(.lucide) {
-    flex-shrink: 0;
     inline-size: var(--size-5-5);
     block-size: var(--size-5-5);
   }

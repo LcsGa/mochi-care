@@ -35,7 +35,6 @@ const variant = computed(() => (shape === "pill" ? "outlined" : "tonal"));
 
     > .lucide {
       margin-block-start: var(--size-0-75);
-      flex-shrink: 0;
       color: var(--color-pink);
       inline-size: var(--size-5);
       block-size: var(--size-5);

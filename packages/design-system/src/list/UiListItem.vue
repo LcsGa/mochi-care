@@ -15,7 +15,6 @@
   padding-block: var(--size-3);
 
   > .lucide {
-    flex-shrink: 0;
     margin-block-start: var(--size-0-75);
     color: var(--color-pink);
     inline-size: var(--size-5);

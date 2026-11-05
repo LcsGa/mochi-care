@@ -33,7 +33,6 @@ const iconMap = {
 
   > .lucide {
     margin-block-start: var(--size-0-75);
-    flex-shrink: 0;
     color: var(--ui-callout-color);
     inline-size: 1.15em;
     block-size: 1.15em;
