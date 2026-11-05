@@ -11,9 +11,8 @@ import { UiChip } from "design-system/chip";
 import { UiCard } from "design-system/card";
 import { UiHeading } from "design-system/heading";
 import { UiListItem } from "design-system/list";
+import { careSheetUrl, insurerName, insurerPhone } from "@/features/insurance/careSheet";
 import ContactChips from "./ContactChips.vue";
-
-const careSheetUrl = `${import.meta.env.BASE_URL}feuille-de-soins-eca.pdf`;
 </script>
 
 <template>
@@ -40,6 +39,19 @@ const careSheetUrl = `${import.meta.env.BASE_URL}feuille-de-soins-eca.pdf`;
         <ContactChips phone="03 82 88 26 66" address="124 Route de Verdun, 57180 Terville" />
       </UiListItem>
 
+      <UiListItem class="insurance">
+        <template #icon><LucideShieldCheck /></template>
+        <hgroup>
+          <UiHeading>{{ insurerName }}</UiHeading>
+          <p>Assurance santé de Mochi</p>
+        </hgroup>
+        <ContactChips :phone="insurerPhone">
+          <UiChip as="a" :href="careSheetUrl" target="_blank">
+            <LucideFileText /> Feuille de soins (PDF)
+          </UiChip>
+        </ContactChips>
+      </UiListItem>
+
       <UiListItem>
         <template #icon><LucideUser /></template>
         <hgroup>
@@ -57,17 +69,6 @@ const careSheetUrl = `${import.meta.env.BASE_URL}feuille-de-soins-eca.pdf`;
         </hgroup>
         <ContactChips phone="06 43 74 57 83" address="30 Rue Jean Dagnaux, 57155 Marly" />
       </UiListItem>
-
-      <UiListItem class="insurance">
-        <template #icon><LucideShieldCheck /></template>
-        <hgroup>
-          <UiHeading>ECA Assurance</UiHeading>
-          <p>Pour se faire rembourser le véto</p>
-        </hgroup>
-        <UiChip as="a" :href="careSheetUrl" target="_blank">
-          <LucideFileText /> Feuille de soins (PDF)
-        </UiChip>
-      </UiListItem>
     </ul>
   </UiCard>
 </template>
@@ -81,9 +82,7 @@ const careSheetUrl = `${import.meta.env.BASE_URL}feuille-de-soins-eca.pdf`;
     column-gap: var(--size-2);
   }
 
-  .insurance .ui-chip {
-    margin-block-start: var(--size-1-5);
-
+  .insurance .contact-chips > :last-child {
     @media print {
       display: none;
     }
