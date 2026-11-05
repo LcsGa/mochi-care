@@ -171,6 +171,10 @@ const sessionAttrs = (session: Session) =>
 
       > .header {
         background: var(--color-pink-mid);
+
+        p {
+          color: var(--color-ink);
+        }
       }
     }
   }
