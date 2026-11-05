@@ -37,7 +37,11 @@ import ContactChips from "./ContactChips.vue";
           <UiHeading>Vétérinaire ophtalmologue</UiHeading>
           <p>MVET, vétérinaires référés pour les yeux</p>
         </hgroup>
-        <ContactChips phone="03 87 62 41 14" address="Rue du Fossé, 57155 Marly" />
+        <ContactChips
+          phone="03 87 62 41 14"
+          address="Rue du Fossé, 57155 Marly"
+          maps-query="MVET, Rue du Fossé, 57155 Marly"
+        />
       </UiListItem>
 
       <UiListItem>
