@@ -12,18 +12,11 @@ import { computed } from "vue";
 
 type Session = "morning" | "afternoon" | "evening";
 
-/**
- * Heures (approximatives) où commence chaque séance. Ce n'est qu'une indication :
- * - le soir déborde jusqu'à 5h du matin, pour qu'un soin fait vers 3h compte encore comme « Soir » ;
- * - le matin court jusqu'à 13h, pour couvrir un réveil tardif après une nuit courte ;
- * - l'après-midi s'arrête à 18h, pour ne pas proposer le Maxidrol du soir trop tôt.
- */
 const SESSION_START_HOURS = { morning: 5, afternoon: 13, evening: 18 } as const satisfies Record<
   Session,
   number
 >;
 
-// Mis à jour toutes les minutes : la séance mise en avant change si on reste sur la page.
 const now = useNow({ scheduler: (update) => useIntervalFn(update, 60_000) });
 
 const currentSession = computed<Session>(() => {
@@ -163,17 +156,16 @@ const sessionAttrs = (session: Session) =>
 </style>
 
 <style>
-/* Séance du moment : surélevée, contour rose et en-tête plus foncé. Jamais à l'impression. */
 @media screen {
   .treatments-card-group > .ui-card {
     transition:
-      transform 0.2s,
+      translate 0.2s,
       box-shadow 0.2s;
 
     &.is-current {
       border: var(--size-0-75) solid var(--color-pink);
       box-shadow: var(--shadow-highlight);
-      transform: translateY(calc(-1 * var(--size-1-5)));
+      translate: 0 calc(-1 * var(--size-1-5));
 
       > .header {
         background: var(--color-pink-mid);
@@ -187,7 +179,7 @@ const sessionAttrs = (session: Session) =>
     transition: none;
 
     &.is-current {
-      transform: none;
+      translate: none;
     }
   }
 }
