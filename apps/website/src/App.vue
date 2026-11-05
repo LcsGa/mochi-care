@@ -34,7 +34,7 @@ import { UiHeading, UiHeadingLayer } from "design-system/heading";
       <UiHeading id="treatments-title">
         <LucideEye /> Les gouttes pour les yeux, étape par étape
       </UiHeading>
-      <p id="traetments-description">
+      <p id="treatments-description">
         Toujours <strong>1 goutte dans chaque œil</strong>. Après chaque goutte, Mochi a sa
         récompense. Pas d'heure précise : il suffit d'espacer les 3 séances à peu près régulièrement
         dans la journée.
