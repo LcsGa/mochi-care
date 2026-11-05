@@ -1,8 +1,17 @@
 <script setup lang="ts">
-import { LucideSiren, LucideStethoscope, LucideUser, LucideUser2 } from "@lucide/vue";
+import {
+  LucideFileText,
+  LucideShieldCheck,
+  LucideSiren,
+  LucideStethoscope,
+  LucideUser,
+  LucideUser2,
+} from "@lucide/vue";
+import { UiChip } from "design-system/chip";
 import { UiCard } from "design-system/card";
 import { UiHeading } from "design-system/heading";
 import { UiListItem } from "design-system/list";
+import { careSheetUrl, insurerName, insurerPhone } from "@/features/insurance/careSheet";
 import ContactChips from "./ContactChips.vue";
 </script>
 
@@ -28,6 +37,19 @@ import ContactChips from "./ContactChips.vue";
           <p>Soirs, week-ends, urgences</p>
         </hgroup>
         <ContactChips phone="03 82 88 26 66" address="124 Route de Verdun, 57180 Terville" />
+      </UiListItem>
+
+      <UiListItem class="insurance">
+        <template #icon><LucideShieldCheck /></template>
+        <hgroup>
+          <UiHeading>{{ insurerName }}</UiHeading>
+          <p>Assurance santé de Mochi</p>
+        </hgroup>
+        <ContactChips :phone="insurerPhone">
+          <UiChip as="a" :href="careSheetUrl" target="_blank">
+            <LucideFileText /> Feuille de soins (PDF)
+          </UiChip>
+        </ContactChips>
       </UiListItem>
 
       <UiListItem>
@@ -58,6 +80,12 @@ import ContactChips from "./ContactChips.vue";
     flex-wrap: wrap;
     align-items: baseline;
     column-gap: var(--size-2);
+  }
+
+  .insurance .contact-chips > :last-child {
+    @media print {
+      display: none;
+    }
   }
 }
 </style>

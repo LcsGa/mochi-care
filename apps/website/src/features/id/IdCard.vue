@@ -6,6 +6,7 @@ import { UiCard } from "design-system/card";
 import { UiDivider } from "design-system/divider";
 import { UiFact } from "design-system/fact";
 import { UiHeading } from "design-system/heading";
+import InsuranceCard from "@/features/insurance/InsuranceCard.vue";
 import IdCardCheckList from "./IdCardCheckList.vue";
 </script>
 
@@ -38,6 +39,8 @@ import IdCardCheckList from "./IdCardCheckList.vue";
     </div>
 
     <IdCardCheckList />
+
+    <InsuranceCard />
   </UiCard>
 </template>
 
@@ -118,10 +121,10 @@ import IdCardCheckList from "./IdCardCheckList.vue";
     > * {
       flex: 1;
     }
+  }
 
-    + * {
-      margin-block-start: var(--size-5);
-    }
+  > .metadata ~ * {
+    margin-block-start: var(--size-5);
   }
 }
 </style>
