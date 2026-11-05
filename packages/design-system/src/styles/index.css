@@ -2,6 +2,7 @@
 @import "./fonts.css";
 @import "./sizes.css";
 @import "./radiuses.css";
+@import "./elevations.css";
 
 * {
   margin: 0;
