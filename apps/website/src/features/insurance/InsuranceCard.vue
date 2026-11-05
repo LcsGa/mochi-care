@@ -42,7 +42,7 @@ import { careSheetUrl, insurerName } from "./careSheet";
       align-self: center;
 
       > .ui-heading {
-        font: var(--font-heading-3);
+        font: var(--font-heading-2);
       }
 
       > p {
