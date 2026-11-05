@@ -21,7 +21,7 @@ import IdCardCheckList from "./IdCardCheckList.vue";
         <UiHeading level="1">
           Mochi <UiAvatar size="medium"><LucideVenus /></UiAvatar>
         </UiHeading>
-        <p>Consignes à jour au 7 novembre 2026.</p>
+        <p>N° de puce : 250 268 712 860 784</p>
       </hgroup>
 
       <UiButton as="a" href="#contacts">
