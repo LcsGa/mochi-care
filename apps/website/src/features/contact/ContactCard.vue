@@ -1,9 +1,19 @@
 <script setup lang="ts">
-import { LucideSiren, LucideStethoscope, LucideUser, LucideUser2 } from "@lucide/vue";
+import {
+  LucideFileText,
+  LucideShieldCheck,
+  LucideSiren,
+  LucideStethoscope,
+  LucideUser,
+  LucideUser2,
+} from "@lucide/vue";
+import { UiChip } from "design-system/chip";
 import { UiCard } from "design-system/card";
 import { UiHeading } from "design-system/heading";
 import { UiListItem } from "design-system/list";
 import ContactChips from "./ContactChips.vue";
+
+const careSheetUrl = `${import.meta.env.BASE_URL}feuille-de-soins-eca.pdf`;
 </script>
 
 <template>
@@ -47,6 +57,17 @@ import ContactChips from "./ContactChips.vue";
         </hgroup>
         <ContactChips phone="06 43 74 57 83" address="30 Rue Jean Dagnaux, 57155 Marly" />
       </UiListItem>
+
+      <UiListItem class="insurance">
+        <template #icon><LucideShieldCheck /></template>
+        <hgroup>
+          <UiHeading>ECA Assurance</UiHeading>
+          <p>Pour se faire rembourser le véto</p>
+        </hgroup>
+        <UiChip as="a" :href="careSheetUrl" target="_blank">
+          <LucideFileText /> Feuille de soins (PDF)
+        </UiChip>
+      </UiListItem>
     </ul>
   </UiCard>
 </template>
@@ -58,6 +79,14 @@ import ContactChips from "./ContactChips.vue";
     flex-wrap: wrap;
     align-items: baseline;
     column-gap: var(--size-2);
+  }
+
+  .insurance .ui-chip {
+    margin-block-start: var(--size-1-5);
+
+    @media print {
+      display: none;
+    }
   }
 }
 </style>
