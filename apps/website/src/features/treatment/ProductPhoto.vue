@@ -20,8 +20,9 @@ const { src, alt } = defineProps<{ src: string; alt: string }>();
   box-sizing: border-box;
 
   > img {
-    max-inline-size: 100%;
-    max-block-size: 100%;
+    inline-size: 100%;
+    block-size: 100%;
+    min-block-size: 0;
     object-fit: contain;
   }
 }

@@ -20,7 +20,8 @@ const { duration } = defineProps<{ duration: number }>();
   grid-template-columns: var(--step-marker-size) 1fr;
   align-items: center;
   column-gap: var(--size-3);
-  min-block-size: var(--size-12);
+  padding-block: var(--size-2);
+  line-height: 1.3;
 
   > .ui-chip {
     grid-column: 2;
