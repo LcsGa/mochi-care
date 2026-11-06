@@ -37,10 +37,6 @@ const icon = computed(() => (severity ? iconMap[severity] : null));
     block-size: 1.15em;
   }
 
-  &:not(.status) {
-    text-transform: uppercase;
-  }
-
   &.success {
     color: var(--color-ok);
   }
@@ -51,9 +47,11 @@ const icon = computed(() => (severity ? iconMap[severity] : null));
 
   &.text {
     color: var(--color-muted);
+    text-transform: uppercase;
   }
 
   &.dashed {
+    font: var(--font-body-strong);
     background: var(--color-surface);
     color: var(--color-pink);
     border: var(--size-px) dashed var(--color-pink-mid);

@@ -4,6 +4,7 @@ import IdCard from "@/features/id/IdCard.vue";
 import MealsCard from "@/features/meal/MealsCard.vue";
 import MonitoringCard from "@/features/monitoring/MonitoringCard.vue";
 import TipsList from "@/features/tip/TipsList.vue";
+import CystitisCardGroup from "@/features/treatment/CystitisCardGroup.vue";
 import TreatmentsCardGroup from "@/features/treatment/TreatmentsCardGroup.vue";
 import WipeCard from "@/features/treatment/WipeCard.vue";
 import {
@@ -11,6 +12,7 @@ import {
   LucideHeartPulse,
   LucideLightbulb,
   LucidePhone,
+  LucidePill,
   LucideSparkle,
   LucideUtensils,
 } from "@lucide/vue";
@@ -52,6 +54,20 @@ import { UiHeading, UiHeadingLayer } from "design-system/heading";
     </hgroup>
 
     <WipeCard />
+  </UiHeadingLayer>
+
+  <UiHeadingLayer
+    as="section"
+    id="cystitis"
+    aria-labelledby="cystitis-title"
+    aria-describedby="cystitis-description"
+  >
+    <hgroup>
+      <UiHeading id="cystitis-title"><LucidePill /> Traitement de la cystite</UiHeading>
+      <p id="cystitis-description">Tout se mélange dans sa portion de repas.</p>
+    </hgroup>
+
+    <CystitisCardGroup />
   </UiHeadingLayer>
 
   <UiHeadingLayer as="section" id="monitoring" aria-labelledby="monitoring-title">
