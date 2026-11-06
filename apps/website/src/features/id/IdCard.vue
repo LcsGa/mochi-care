@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LucideCake, LucideDog, LucidePhone, LucideVenus, LucideWeight } from "@lucide/vue";
+import { LucideCake, LucidePawPrint, LucidePhone, LucideVenus, LucideWeight } from "@lucide/vue";
 import { UiAvatar } from "design-system/avatar";
 import { UiButton } from "design-system/button";
 import { UiCard } from "design-system/card";
@@ -33,7 +33,7 @@ import IdCardCheckList from "./IdCardCheckList.vue";
     <UiDivider />
 
     <div class="metadata" role="group">
-      <UiFact :icon="LucideDog" label="Race" value="Carlin" />
+      <UiFact :icon="LucidePawPrint" label="Race" value="Carlin" />
       <UiFact :icon="LucideWeight" label="Poids" value="7,5 kg" />
       <UiFact :icon="LucideCake" label="Âge" value="4 ans" meta="née le 27 juin 2022" />
     </div>
