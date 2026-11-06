@@ -26,7 +26,7 @@ import IdCardCheckList from "./IdCardCheckList.vue";
 
       <UiButton as="a" href="#contacts">
         <LucidePhone />
-        Un soucis ? Numéros du véto
+        Contacts en cas de souci
       </UiButton>
     </header>
 
