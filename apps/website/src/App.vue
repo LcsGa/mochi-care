@@ -5,11 +5,13 @@ import MealsCard from "@/features/meal/MealsCard.vue";
 import MonitoringCard from "@/features/monitoring/MonitoringCard.vue";
 import TipsList from "@/features/tip/TipsList.vue";
 import TreatmentsCardGroup from "@/features/treatment/TreatmentsCardGroup.vue";
+import WipeCard from "@/features/treatment/WipeCard.vue";
 import {
   LucideEye,
   LucideHeartPulse,
   LucideLightbulb,
   LucidePhone,
+  LucideSparkle,
   LucideUtensils,
 } from "@lucide/vue";
 import { UiHeading, UiHeadingLayer } from "design-system/heading";
@@ -31,17 +33,25 @@ import { UiHeading, UiHeadingLayer } from "design-system/heading";
     aria-describedby="treatments-description"
   >
     <hgroup>
-      <UiHeading id="treatments-title">
-        <LucideEye /> Les gouttes pour les yeux, étape par étape
-      </UiHeading>
-      <p id="treatments-description">
-        Toujours <strong>1 goutte dans chaque œil</strong>. Après chaque goutte, Mochi a sa
-        récompense. Pas d'heure précise : il suffit d'espacer les 3 séances à peu près régulièrement
-        dans la journée.
-      </p>
+      <UiHeading id="treatments-title"><LucideEye /> Gouttes pour les yeux</UiHeading>
+      <p id="treatments-description">Après chaque goutte, lui donner un bonbon.</p>
     </hgroup>
 
     <TreatmentsCardGroup />
+  </UiHeadingLayer>
+
+  <UiHeadingLayer
+    as="section"
+    id="wipe"
+    aria-labelledby="wipe-title"
+    aria-describedby="wipe-description"
+  >
+    <hgroup>
+      <UiHeading id="wipe-title"><LucideSparkle /> Lingette sur le pli du nez</UiHeading>
+      <p id="wipe-description">Après la lingette, lui donner un bonbon.</p>
+    </hgroup>
+
+    <WipeCard />
   </UiHeadingLayer>
 
   <UiHeadingLayer as="section" id="monitoring" aria-labelledby="monitoring-title">
@@ -75,8 +85,14 @@ import { UiHeading, UiHeadingLayer } from "design-system/heading";
       margin-block-end: var(--size-3-5);
     }
 
-    > hgroup > .ui-heading {
-      margin-block-end: var(--size-3-5);
+    > hgroup {
+      display: grid;
+      row-gap: var(--size-1);
+
+      > p {
+        font: var(--font-small);
+        color: var(--color-muted);
+      }
     }
   }
 }
