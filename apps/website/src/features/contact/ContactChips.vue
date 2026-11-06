@@ -9,7 +9,9 @@ const { phone, address, mapsQuery } = defineProps<{
   mapsQuery?: string;
 }>();
 const tel = computed(() => `tel:+33${phone.slice(1).replaceAll(" ", "")}`);
-const map = computed(() => `https://www.google.com/maps/dir//${(mapsQuery ?? address)?.replaceAll(" ", "+")}`);
+const map = computed(
+  () => `https://www.google.com/maps/dir//${(mapsQuery ?? address)?.replaceAll(" ", "+")}`,
+);
 </script>
 
 <template>
