@@ -21,9 +21,21 @@ body {
   color: var(--color-ink);
 }
 
-hgroup > p {
-  color: var(--color-muted);
-  font-size: 1rem;
+hgroup {
+  display: grid;
+  gap: var(--size-0-5);
+
+  > p:has(~ .ui-heading) {
+    font: var(--font-label);
+    letter-spacing: var(--font-label-letter-spacing);
+    color: var(--color-muted);
+    text-transform: uppercase;
+  }
+
+  > .ui-heading ~ p {
+    color: var(--color-muted);
+    font-size: 1rem;
+  }
 }
 
 .bold,
@@ -45,22 +57,14 @@ small {
   text-transform: uppercase;
 }
 
-.img {
-  block-size: var(--size-24);
-  padding: var(--size-1-5);
-  border-radius: var(--radius-md);
-  background: white;
-  inline-size: fit-content;
-
-  > img {
-    block-size: 100%;
-  }
-}
-
 .alert {
   color: var(--color-danger) !important;
 }
 
 .lucide {
   flex-shrink: 0;
+}
+
+.col-span-full {
+  grid-column: 1 / -1;
 }
