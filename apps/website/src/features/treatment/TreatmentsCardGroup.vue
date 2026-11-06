@@ -126,7 +126,7 @@ const sessionAttrs = (session: Session) =>
     (var(--body-max-inline-size) - 2 * var(--sessions-column-gap)) / 3
   );
   display: grid;
-  align-items: stretch;
+  align-items: start;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--sessions-min-inline-size)), 1fr));
   column-gap: var(--sessions-column-gap);
   row-gap: var(--size-7);
