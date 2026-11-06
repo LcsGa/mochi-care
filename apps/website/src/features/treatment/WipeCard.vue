@@ -25,14 +25,5 @@ import ProductPhoto from "./ProductPhoto.vue";
     align-items: center;
     gap: var(--size-4);
   }
-
-  .text {
-    display: grid;
-    row-gap: var(--size-1-5);
-
-    > .ui-chip {
-      justify-self: start;
-    }
-  }
 }
 </style>

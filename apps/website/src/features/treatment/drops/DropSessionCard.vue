@@ -16,6 +16,7 @@ const { name, icon, title, description, steps, active } = defineProps<
     :aria-current="active ? 'time' : undefined"
     :aria-labelledby="`${name}-title`"
     :aria-describedby="`${name}-description`"
+    :style="{ '--drop-first-anchor': `--${name}-first`, '--drop-last-anchor': `--${name}-last` }"
   >
     <template #header>
       <hgroup>
@@ -32,18 +33,17 @@ const { name, icon, title, description, steps, active } = defineProps<
         v-for="(step, index) in steps"
         :key="step.name"
         v-bind="step"
-        :class="{ first: index === 0, last: index === steps.length - 1 }"
+        :wait-minutes="index < steps.length - 1 ? step.waitMinutes : undefined"
       />
     </ol>
 
-    <div class="marker-link"></div>
+    <div class="marker-link" aria-hidden="true"></div>
   </UiCard>
 </template>
 
 <style>
 .drop-session-card {
   counter-reset: step;
-  anchor-scope: --first, --last;
 
   > .content {
     > .steps {
@@ -54,33 +54,45 @@ const { name, icon, title, description, steps, active } = defineProps<
 
     > .marker-link {
       position: absolute;
-      inset-inline-start: anchor(--first center);
-      inset-block-start: anchor(--first center);
-      inset-block-end: anchor(--last center);
+      inset-inline-start: anchor(var(--drop-first-anchor) center);
+      inset-block-start: anchor(var(--drop-first-anchor) center);
+      inset-block-end: anchor(var(--drop-last-anchor) center);
       border-inline-start: var(--size-1) dotted var(--color-pink-mid);
       translate: -50%;
     }
   }
 
-  &[aria-current] {
-    background: var(--color-bg);
-    border: var(--size-0-75) solid var(--color-pink);
-    box-shadow: var(--shadow-highlight);
-    translate: 0 calc(-1 * var(--size-1-5));
+  @media screen {
+    &[aria-current] {
+      background: var(--color-bg);
+      border: var(--size-0-75) solid var(--color-pink);
+      box-shadow: var(--shadow-highlight);
+      translate: 0 calc(-1 * var(--size-1-5));
 
-    > .header {
-      background: var(--color-pink-mid);
+      > .header {
+        background: var(--color-pink-mid);
 
-      p {
-        color: var(--color-ink);
+        p {
+          color: var(--color-ink);
+        }
       }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition:
+        translate 0.2s,
+        box-shadow 0.2s;
     }
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    transition:
-      translate 0.2s,
-      box-shadow 0.2s;
+  @media print {
+    > .header {
+      padding: var(--size-2) var(--size-3);
+    }
+
+    > .content {
+      padding: var(--size-3);
+    }
   }
 }
 </style>

@@ -11,7 +11,7 @@ const { name, image, detail, waitMinutes } = defineProps<Step>();
 
 <template>
   <li class="drop-step">
-    <span class="marker"></span>
+    <span class="marker" aria-hidden="true"></span>
 
     <UiCard class="drop-card" as="article">
       <ProductPhoto :src="image" :alt="`Photo du ${name}`" />
@@ -37,12 +37,12 @@ const { name, image, detail, waitMinutes } = defineProps<Step>();
   gap: var(--drop-step-row-gap) var(--size-3);
   counter-increment: step;
 
-  &.first > .marker {
-    anchor-name: --first;
+  &:first-child > .marker {
+    anchor-name: var(--drop-first-anchor);
   }
 
-  &.last > .marker {
-    anchor-name: --last;
+  &:last-child > .marker {
+    anchor-name: var(--drop-last-anchor);
   }
 
   > .marker {
@@ -54,6 +54,7 @@ const { name, image, detail, waitMinutes } = defineProps<Step>();
     color: var(--color-on-pink);
     border-radius: var(--radius-round);
     z-index: 1;
+    print-color-adjust: exact;
 
     &::before {
       content: counter(step);
