@@ -1,68 +1,44 @@
 <script setup lang="ts">
-import { LucideCalendarClock, LucidePlus } from "@lucide/vue";
-import { UiBadge } from "design-system/badge";
+import lingettes from "@/assets/lingettes.webp";
+import { LucideClock } from "@lucide/vue";
 import { UiCard } from "design-system/card";
 import { UiChip } from "design-system/chip";
-import { UiHeading } from "design-system/heading";
+import ProductPhoto from "./ProductPhoto.vue";
 </script>
 
 <template>
-  <UiCard as="article" class="wipe-card" variant="dashed" aria-labelledby="wipe-heading">
-    <UiBadge variant="dashed"><LucidePlus /> En plus des gouttes pour les yeux</UiBadge>
+  <UiCard as="article" class="wipe-card" aria-label="Lingette sur le pli du nez">
+    <ProductPhoto :src="lingettes" alt="Photo des lingettes" />
 
-    <div class="img">
-      <img src="@/assets/lingettes.webp" alt="Photo des lingettes" />
+    <div class="text">
+      <UiChip><LucideClock /> 1 fois par jour</UiChip>
+      <p>
+        Passer <strong>1 lingette</strong> (découpée) dans le pli du nez, à n'importe quel moment.
+      </p>
     </div>
-
-    <UiHeading id="wipe-heading">Lingette sur le pli du nez</UiHeading>
-
-    <p>Passer un petit coup de lingette (découpée) dans le pli au-dessus de son nez.</p>
-
-    <UiChip>
-      <LucideCalendarClock /> 1 fois par jour, quand vous voulez : avant, pendant ou après les
-      gouttes.
-    </UiChip>
   </UiCard>
 </template>
 
 <style>
 .wipe-card {
-  position: relative;
-  overflow: visible;
-  container-type: inline-size;
-  border-color: var(--color-pink-mid);
-
   > .content {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    column-gap: var(--size-4-5);
+    gap: var(--size-4);
+  }
 
-    @container (inline-size <= 540px) {
-      grid-template-columns: auto;
+  > .content > .product-photo {
+    inline-size: var(--size-19);
+    block-size: var(--size-24);
+  }
 
-      > .ui-heading {
-        margin-block-start: var(--size-3);
-      }
-    }
-
-    > .ui-badge {
-      position: absolute;
-      inset-block-start: calc(-1 * var(--size-3-5));
-      inset-inline-start: var(--size-4-5);
-    }
-
-    > .img {
-      grid-row: 1 / span 3;
-    }
-
-    > p {
-      margin-block-start: var(--size-1);
-    }
+  .text {
+    display: grid;
+    row-gap: var(--size-1-5);
 
     > .ui-chip {
       justify-self: start;
-      margin-block-start: var(--size-2-5);
     }
   }
 }
