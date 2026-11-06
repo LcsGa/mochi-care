@@ -66,7 +66,7 @@ import { UiListItem } from "design-system/list";
           <UiHeading>Patte un peu froissée</UiHeading>
           <p>Ça arrive si elle a couru comme une folle en promenade.</p>
         </hgroup>
-        <p>Surveiller. En général, ce n'est pas grave.</p>
+        <p>Masser la zone avec une noisette de gel TraumaGreen. Surveiller. En général, ce n'est pas grave.</p>
       </UiListItem>
     </ul>
   </UiCard>
