@@ -3,16 +3,16 @@ import fortiflora from "@/assets/fortiflora.webp";
 import sultrian from "@/assets/sultrian.webp";
 import { LucideCalendar } from "@lucide/vue";
 import { UiCallout } from "design-system/callout";
-import { UiChip } from "design-system/chip";
+import { UiBadge } from "design-system/badge";
 import ProductCard from "./ProductCard.vue";
 </script>
 
 <template>
   <div role="group" class="cystitis-card-group">
-    <UiChip shape="pill">
+    <UiBadge variant="dashed">
       <LucideCalendar />
-      Jusqu'au 26 novembre
-    </UiChip>
+      Pendant 20 jours, jusqu'au 26 novembre
+    </UiBadge>
 
     <div class="products">
       <ProductCard
@@ -46,7 +46,7 @@ import ProductCard from "./ProductCard.vue";
   display: grid;
   gap: var(--size-5);
 
-  > .ui-chip {
+  > .ui-badge {
     justify-self: start;
   }
 
