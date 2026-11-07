@@ -2,6 +2,7 @@
 import { LucideCake, LucidePawPrint, LucidePhone, LucideVenus, LucideWeight } from "@lucide/vue";
 import { UiAvatar } from "design-system/avatar";
 import { UiButton } from "design-system/button";
+import { UiCallout } from "design-system/callout";
 import { UiCard } from "design-system/card";
 import { UiDivider } from "design-system/divider";
 import { UiFact } from "design-system/fact";
@@ -21,6 +22,7 @@ import IdCardCheckList from "./IdCardCheckList.vue";
         <UiHeading level="1">
           Mochi <UiAvatar size="medium"><LucideVenus /></UiAvatar>
         </UiHeading>
+        <p class="sterilized">Stérilisée</p>
         <p>N° de puce : 250 268 712 860 784</p>
       </hgroup>
 
@@ -37,6 +39,10 @@ import IdCardCheckList from "./IdCardCheckList.vue";
       <UiFact :icon="LucideWeight" label="Poids" value="7,5 kg" />
       <UiFact :icon="LucideCake" label="Âge" value="4 ans" meta="née le 27 juin 2022" />
     </div>
+
+    <UiCallout severity="danger" compact>
+      <strong>Allergies :</strong> de contact (peau atopique).
+    </UiCallout>
 
     <IdCardCheckList />
 
@@ -58,6 +64,16 @@ import IdCardCheckList from "./IdCardCheckList.vue";
 
     > hgroup > p {
       margin-block-start: var(--size-1-5);
+    }
+
+    > hgroup > .sterilized {
+      inline-size: fit-content;
+      margin-block-start: var(--size-2);
+      padding: var(--size-0-5) var(--size-3);
+      border-radius: var(--radius-pill);
+      background: var(--color-pink-soft);
+      color: var(--color-pink);
+      font: var(--font-label);
     }
 
     @container (inline-size <= 800px) {
