@@ -44,20 +44,6 @@ import { UiHeading, UiHeadingLayer } from "design-system/heading";
 
   <UiHeadingLayer
     as="section"
-    id="wipe"
-    aria-labelledby="wipe-title"
-    aria-describedby="wipe-description"
-  >
-    <hgroup>
-      <UiHeading id="wipe-title"><LucideSparkle /> Lingette sur le pli du nez</UiHeading>
-      <p id="wipe-description">Après la lingette, lui donner un bonbon.</p>
-    </hgroup>
-
-    <WipeCard />
-  </UiHeadingLayer>
-
-  <UiHeadingLayer
-    as="section"
     id="cystitis"
     aria-labelledby="cystitis-title"
     aria-describedby="cystitis-description"
@@ -68,6 +54,20 @@ import { UiHeading, UiHeadingLayer } from "design-system/heading";
     </hgroup>
 
     <CystitisCardGroup />
+  </UiHeadingLayer>
+
+  <UiHeadingLayer
+    as="section"
+    id="wipe"
+    aria-labelledby="wipe-title"
+    aria-describedby="wipe-description"
+  >
+    <hgroup>
+      <UiHeading id="wipe-title"><LucideSparkle /> Lingette sur le pli du nez</UiHeading>
+      <p id="wipe-description">Après la lingette, lui donner un bonbon.</p>
+    </hgroup>
+
+    <WipeCard />
   </UiHeadingLayer>
 
   <UiHeadingLayer as="section" id="monitoring" aria-labelledby="monitoring-title">
