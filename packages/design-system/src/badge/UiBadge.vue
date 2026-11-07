@@ -4,9 +4,16 @@ import { computed, defineProps } from "vue";
 
 type Severity = "success" | "danger";
 
-const { severity, variant = "text" } = defineProps<{
-  variant: "status" | "dashed" | "text";
+const {
+  as = "span",
+  severity,
+  variant = "text",
+  size = "default",
+} = defineProps<{
+  as?: "span" | "p";
+  variant: "status" | "dashed" | "tonal" | "text";
   severity?: Severity;
+  size?: "default" | "small";
 }>();
 
 const iconMap = {
@@ -18,10 +25,10 @@ const icon = computed(() => (severity ? iconMap[severity] : null));
 </script>
 
 <template>
-  <span class="ui-badge" :class="[variant, severity]">
+  <component :is="as" class="ui-badge" :class="[variant, severity, size]">
     <component :is="icon" v-if="variant === 'status'" />
     <slot />
-  </span>
+  </component>
 </template>
 
 <style scoped>
@@ -57,6 +64,22 @@ const icon = computed(() => (severity ? iconMap[severity] : null));
     border: var(--size-px) dashed var(--color-pink-mid);
     border-radius: var(--radius-pill);
     padding: var(--size-1) var(--size-3);
+  }
+
+  &.tonal {
+    font: var(--font-body-strong);
+    background: var(--color-pink-soft);
+    color: var(--color-pink);
+    border-radius: var(--radius-pill);
+    padding: var(--size-1) var(--size-3);
+  }
+
+  &.small {
+    font: var(--font-label);
+
+    &:is(.dashed, .tonal) {
+      padding: var(--size-0-5) var(--size-3);
+    }
   }
 }
 </style>
