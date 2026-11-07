@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { LucideCake, LucidePawPrint, LucidePhone, LucideVenus, LucideWeight } from "@lucide/vue";
 import { UiAvatar } from "design-system/avatar";
+import { UiBadge } from "design-system/badge";
 import { UiButton } from "design-system/button";
+import { UiCallout } from "design-system/callout";
 import { UiCard } from "design-system/card";
 import { UiDivider } from "design-system/divider";
 import { UiFact } from "design-system/fact";
@@ -21,6 +23,7 @@ import IdCardCheckList from "./IdCardCheckList.vue";
         <UiHeading level="1">
           Mochi <UiAvatar size="medium"><LucideVenus /></UiAvatar>
         </UiHeading>
+        <UiBadge as="p" variant="tonal" size="small">Stérilisée</UiBadge>
         <p>N° de puce : 250 268 712 860 784</p>
       </hgroup>
 
@@ -37,6 +40,10 @@ import IdCardCheckList from "./IdCardCheckList.vue";
       <UiFact :icon="LucideWeight" label="Poids" value="7,5 kg" />
       <UiFact :icon="LucideCake" label="Âge" value="4 ans" meta="née le 27 juin 2022" />
     </div>
+
+    <UiCallout severity="danger" compact>
+      <strong>Allergies :</strong> de contact (peau atopique).
+    </UiCallout>
 
     <IdCardCheckList />
 
@@ -58,6 +65,10 @@ import IdCardCheckList from "./IdCardCheckList.vue";
 
     > hgroup > p {
       margin-block-start: var(--size-1-5);
+    }
+
+    > hgroup > .ui-badge {
+      justify-self: start;
     }
 
     @container (inline-size <= 800px) {
